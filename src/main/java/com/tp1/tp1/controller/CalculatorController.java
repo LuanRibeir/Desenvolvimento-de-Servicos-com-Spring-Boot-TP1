@@ -52,4 +52,17 @@ public class CalculatorController {
         return calculator.getNumber1() * calculator.getNumber2();
     }
 
+    // divisão
+    @GetMapping("/dividir")
+    public double getDividir(
+            @RequestParam(defaultValue = "0") double numero1,
+            @RequestParam(defaultValue = "0") double numero2) {
+        return numero1 / numero2;
+    }
+
+    @PostMapping("/dividir")
+    public double postDividir(@RequestBody Calculator calculator) {
+        return calculator.getNumber1() / calculator.getNumber2();
+    }
+
 }
