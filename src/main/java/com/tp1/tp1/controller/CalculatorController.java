@@ -39,4 +39,17 @@ public class CalculatorController {
         return calculator.getNumber1() - calculator.getNumber2();
     }
 
+    // multiplicação
+    @GetMapping("/multiplicar")
+    public double getMultiplicar(
+            @RequestParam(defaultValue = "0") double numero1,
+            @RequestParam(defaultValue = "0") double numero2) {
+        return numero1 * numero2;
+    }
+
+    @PostMapping("/multiplicar")
+    public double postMultiplicar(@RequestBody Calculator calculator) {
+        return calculator.getNumber1() * calculator.getNumber2();
+    }
+
 }
