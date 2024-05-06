@@ -25,4 +25,18 @@ public class CalculatorController {
     public double postSoma(@RequestBody Calculator calculator) {
         return calculator.getNumber1() + calculator.getNumber2();
     }
+
+    // subtração
+    @GetMapping("/subtrair")
+    public double getSubtrair(
+            @RequestParam(defaultValue = "0") double numero1,
+            @RequestParam(defaultValue = "0") double numero2) {
+        return numero1 - numero2;
+    }
+
+    @PostMapping("/subtrair")
+    public double postSubtrair(@RequestBody Calculator calculator) {
+        return calculator.getNumber1() - calculator.getNumber2();
+    }
+
 }
