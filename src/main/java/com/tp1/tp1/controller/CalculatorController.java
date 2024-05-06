@@ -65,4 +65,16 @@ public class CalculatorController {
         return calculator.getNumber1() / calculator.getNumber2();
     }
 
+    // exponenciação
+    @GetMapping("/elevar")
+    public double getElevar(
+            @RequestParam(defaultValue = "0") double numero1,
+            @RequestParam(defaultValue = "0") double numero2) {
+        return Math.pow(numero1, numero2);
+    }
+
+    @PostMapping("/elevar")
+    public double postElevar(@RequestBody Calculator calculator) {
+        return Math.pow(calculator.getNumber1(), calculator.getNumber2());
+    }
 }
